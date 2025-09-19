@@ -1,0 +1,84 @@
+import React, { useState } from "react";
+import { Menu, X } from "lucide-react";
+import { Link } from "react-router-dom";
+
+const Navigation = () => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const navLinks = [
+    { name: "Home", href: "/" },
+    { name: "About Us", href: "/about" },
+    { name: "Destinations", href: "/destinations" },
+    { name: "Packages", href: "/packages" },
+    { name: "Gallery", href: "/gallery" },
+    { name: "Contact Us", href: "/contact" },
+  ];
+
+  return (
+    <header className="fixed top-0 w-full z-50 bg-transparent backdrop-blur-md border-b border-gray-300">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-20">
+        {/* LOGO */}
+        <Link to="/" className="flex items-center mr-4">
+          <img src="#" alt="Logo" className="h-12 w-auto" />
+        </Link>
+
+        {/* DESKTOP NAVIGATION */}
+        <nav className="hidden lg:flex space-x-8">
+          {navLinks.map((link, idx) => (
+            <Link
+              key={idx}
+              to={link.href}
+              className="text-white font-medium transition hover:text-blue-600"
+            >
+              {link.name}
+            </Link>
+          ))}
+          {/* Check Availability as link */}
+          <Link
+            to="/check-availability"
+            className="ml-4 px-4 py-2 border border-white rounded hover:bg-white hover:text-black transition"
+          >
+            Check Availability
+          </Link>
+        </nav>
+
+        {/* MOBILE MENU TOGGLE */}
+        <div className="lg:hidden">
+          <button onClick={() => setIsOpen(!isOpen)} aria-label="Toggle menu">
+            {isOpen ? <X size={28} color="white" /> : <Menu size={28} color="white" />}
+          </button>
+        </div>
+      </div>
+
+      {/* MOBILE MENU DROPDOWN */}
+      <div
+        className={`lg:hidden bg-white shadow-md border-t border-gray-200 overflow-hidden transition-[max-height] duration-500 ease-in-out ${
+          isOpen ? "max-h-96" : "max-h-0"
+        }`}
+      >
+        <div className="px-4 py-4 space-y-3">
+          {navLinks.map((link, idx) => (
+            <Link
+              key={idx}
+              to={link.href}
+              className="block text-gray-700 hover:text-blue-600 font-medium"
+              onClick={() => setIsOpen(false)}
+            >
+              {link.name}
+            </Link>
+          ))}
+          {/* Check Availability */}
+          <Link
+            to="/check-availability"
+            className="block px-4 py-2 border border-gray-400 rounded text-center text-gray-700 hover:bg-blue-600 hover:text-white transition"
+            onClick={() => setIsOpen(false)}
+          >
+            Check Availability
+          </Link>
+        </div>
+      </div>
+    </header>
+  );
+};
+
+export default Navigation;

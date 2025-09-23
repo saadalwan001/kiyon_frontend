@@ -13,13 +13,13 @@ const Slider = () => {
   }, []);
 
   return (
-    <div className="relative w-screen h-screen overflow-hidden">
+    <div className="relative w-full h-screen overflow-hidden bg-black/100">
       {/* Images */}
       {images.map((img, index) => (
         <div
           key={index}
-          className={`absolute inset-0 transition-all duration-[2000ms] ease-in-out
-            ${index === current ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-10"}
+          className={`absolute top-0 left-0 w-screen h-screen transition-opacity duration-[2000ms] ease-in-out
+            ${index === current ? "opacity-100 z-10" : "opacity-0 z-0"}
           `}
           style={{
             backgroundImage: `url(${img})`,
@@ -33,11 +33,11 @@ const Slider = () => {
       <div className="absolute inset-0 bg-black/40"></div>
 
       {/* Overlay content */}
-      <div className="relative top-[500px] z-10 text-center text-white px-4">
-        <h1 className="text-4xl md:text-6xl font-bold tracking-wide">
+      <div className="absolute inset-0 flex flex-col items-center justify-center text-center text-white px-4 z-20 top-90">
+        <h1 className="font-['Playfair_Display'] text-[58px] leading-[75px] font-normal tracking-wide">
           VISIT. VENTURE. VALUE.
         </h1>
-        <p className="mt-4 text-lg md:text-2xl font-medium font-['Times_New_Roman']">
+        <p className="mt-4 font-['barlow'] text-[20px] leading-[30px] font-normal">
           KIYON TRAVELS & TOURS
         </p>
       </div>

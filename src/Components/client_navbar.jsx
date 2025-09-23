@@ -1,9 +1,10 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
 
   const navLinks = [
     { name: "Home", href: "/" },
@@ -14,8 +15,26 @@ const Navigation = () => {
     { name: "Contact Us", href: "/contact" },
   ];
 
+  // Track scroll to change navbar text color
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 50) {
+        setScrolled(true);
+      } else {
+        setScrolled(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
-    <header className="fixed top-0 w-full z-50 bg-gray-200/25 backdrop-blur-md border-b border-gray-300">
+    <header
+      className={`fixed top-0 w-full z-50 backdrop-blur-md border-b transition-colors duration-300 ${
+        scrolled ? "bg-white/90 border-gray-300" : "bg-gray-200/25 border-gray-300"
+      }`}
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-20">
         {/* LOGO */}
         <Link to="/" className="flex items-center mr-4">
@@ -23,20 +42,25 @@ const Navigation = () => {
         </Link>
 
         {/* DESKTOP NAVIGATION */}
-        <nav className="hidden lg:flex space-x-8">
+        <nav className="hidden lg:flex items-center space-x-8">
           {navLinks.map((link, idx) => (
             <Link
               key={idx}
               to={link.href}
-              className="text-white/90 font-medium transition hover:text-[#25D366]"
+              className={`font-barlow text-[15px] leading-[23px] font-normal transition hover:text-[#25D366] ${
+                scrolled ? "text-black" : "text-white/90"
+              }`}
             >
               {link.name}
             </Link>
           ))}
-          {/* Check Availability as link */}
+
+          {/* Check Availability */}
           <Link
             to="/check-availability"
-            className="ml-4 px-4 py-2 border border-white/90 rounded text-white hover:bg-[#25D366] hover:text-black transition"
+            className={`ml-4 px-4 py-2 border rounded font-['Playfair_Display'] text-[15px] leading-[23px] font-normal transition hover:bg-[#25D366] hover:text-black ${
+              scrolled ? "border-black text-black" : "border-white/90 text-white"
+            }`}
           >
             Check Availability
           </Link>
@@ -45,7 +69,7 @@ const Navigation = () => {
         {/* MOBILE MENU TOGGLE */}
         <div className="lg:hidden">
           <button onClick={() => setIsOpen(!isOpen)} aria-label="Toggle menu">
-            {isOpen ? <X size={28} color="white" /> : <Menu size={28} color="white" />}
+            {isOpen ? <X size={28} color={scrolled ? "black" : "white"} /> : <Menu size={28} color={scrolled ? "black" : "white"} />}
           </button>
         </div>
       </div>
@@ -61,16 +85,15 @@ const Navigation = () => {
             <Link
               key={idx}
               to={link.href}
-              className="block text-gray-900 font-medium hover:text-blue-500"
+              className="block font-['barlow'] text-[15px] leading-[23px] font-normal text-gray-900 hover:text-blue-500"
               onClick={() => setIsOpen(false)}
             >
               {link.name}
             </Link>
           ))}
-          {/* Check Availability */}
           <Link
             to="/check-availability"
-            className="block px-4 py-2 border border-gray-400 rounded text-center text-gray-800 hover:bg-blue-600 hover:text-white transition"
+            className="block px-4 py-2 border border-gray-400 rounded text-center font-['Playfair_Display'] text-[15px] leading-[23px] font-normal text-gray-800 hover:bg-blue-600 hover:text-white transition"
             onClick={() => setIsOpen(false)}
           >
             Check Availability

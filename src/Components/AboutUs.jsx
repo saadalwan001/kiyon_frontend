@@ -1,31 +1,31 @@
 import React from "react";
-import Button from "@/Components/ui/button.jsx"
+import Button from "@/Components/ui/button.jsx";
 
 const AboutUs = () => {
   return (
-    <section className="py-16 bg-gray-50 overflow-x-hidden ">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-start gap-10 w-full">
-        
+    <section className="py-16  overflow-x-hidden relative my-[80px] ">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center gap-20 w-full ">
+
         {/* Left Image */}
-        <div className="md:w-5/12 w-full flex-shrink-0 min-w-0">
+        <div className="w-full md:w-auto flex justify-center md:justify-start relative">
           <img
             src="/AboutUs.jpg"
             alt="Kiyon Travels"
-            className="w-full h-[400px] md:h-[500px] rounded-3xl shadow-lg object-cover"
+            className="w-[500px] h-[700px]  shadow-lg object-cover "
           />
         </div>
 
         {/* Right Content */}
-        <div className="md:w-7/12 w-full flex flex-col justify-start min-w-0">
-          <div>
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 font-['Times_New_Roman'] text-left">
-              Kiyon Travels & Tours
-            </h2>
-            <p className="mt-2 text-lg text-gray-600 italic text-left">
-              Welcome to Kiyon Travels & Tours – Your Gateway to Sri Lanka
-            </p>
-          </div>
-          <p className="mt-6 text-gray-700 text-justify leading-relaxed mb-[20px]">
+<div className="w-full md:w-7/12 flex flex-col justify-center items-start text-left md:text-left">
+  <div>
+    <h2 className="font-['Playfair_Display'] text-[50px] leading-[50px] font-normal text-gray-900">
+      Kiyon Travels & Tours
+    </h2>
+    <p className="font-['barlow'] text-[15px] leading-[26px] font-bold text-[#238B45] italic max-w-[500px] mt-[30px]">
+      Welcome to Kiyon Travels & Tours – Your Gateway to Sri Lanka
+    </p>
+  </div>
+  <p className="mt-6 font-['barlow'] text-[15px] leading-[26px] font-bold text-gray-700 text-justify max-w-[500px] mb-[30px]">
             At Kiyon Travels & Tours, we create unforgettable journeys across
             Sri Lanka’s most enchanting destinations. From bustling tourist
             hotspots to hidden gems off the beaten path, every experience is
@@ -35,16 +35,14 @@ const AboutUs = () => {
             appreciation for local traditions, flavors, and artistry, we bring
             Sri Lanka’s spirit to life in every itinerary. Explore, indulge, and
             let Kiyon Travels & Tours guide you to moments that stay with you
-            forever.
-            
-          </p>
-          <div>
-            <Button className="" text="READMORE" />
-          </div>
-          
-          
-        </div>
-        
+  </p>
+  <div className="w-full">
+    <Button text="READ MORE" />
+  </div>
+</div>
+
+         
+
       </div>
     </section>
   );

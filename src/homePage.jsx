@@ -1,6 +1,8 @@
 import React from "react";
 import Navbar from "@/Components/client_navbar.jsx"
 import Slider from "@/Components/slider.jsx"
+import AboutUs from "@/Components/AboutUs.jsx";
+import WhyChooseUs from "@/Components/WhyChooseUs.jsx";
 
 
 
@@ -9,6 +11,8 @@ export default function homePage() {
     <>
     <Navbar/>
     <Slider/>
+    <AboutUs/>
+    <WhyChooseUs/>
     </>
   )
 }

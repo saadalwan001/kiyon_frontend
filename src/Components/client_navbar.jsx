@@ -15,7 +15,7 @@ const Navigation = () => {
   ];
 
   return (
-    <header className="fixed top-0 w-full z-50 bg-transparent backdrop-blur-md border-b border-gray-300">
+    <header className="fixed top-0 w-full z-50 bg-gray-200/25 backdrop-blur-md border-b border-gray-300">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-20">
         {/* LOGO */}
         <Link to="/" className="flex items-center mr-4">
@@ -28,7 +28,7 @@ const Navigation = () => {
             <Link
               key={idx}
               to={link.href}
-              className="text-white font-medium transition hover:text-blue-600"
+              className="text-white/90 font-medium transition hover:text-[#25D366]"
             >
               {link.name}
             </Link>
@@ -36,7 +36,7 @@ const Navigation = () => {
           {/* Check Availability as link */}
           <Link
             to="/check-availability"
-            className="ml-4 px-4 py-2 border border-white rounded hover:bg-white hover:text-black transition"
+            className="ml-4 px-4 py-2 border border-white/90 rounded text-white hover:bg-[#25D366] hover:text-black transition"
           >
             Check Availability
           </Link>
@@ -52,7 +52,7 @@ const Navigation = () => {
 
       {/* MOBILE MENU DROPDOWN */}
       <div
-        className={`lg:hidden bg-white shadow-md border-t border-gray-200 overflow-hidden transition-[max-height] duration-500 ease-in-out ${
+        className={`lg:hidden bg-white/95 shadow-md border-t border-gray-200 overflow-hidden transition-[max-height] duration-500 ease-in-out ${
           isOpen ? "max-h-96" : "max-h-0"
         }`}
       >
@@ -61,7 +61,7 @@ const Navigation = () => {
             <Link
               key={idx}
               to={link.href}
-              className="block text-gray-700 hover:text-blue-600 font-medium"
+              className="block text-gray-900 font-medium hover:text-blue-500"
               onClick={() => setIsOpen(false)}
             >
               {link.name}
@@ -70,7 +70,7 @@ const Navigation = () => {
           {/* Check Availability */}
           <Link
             to="/check-availability"
-            className="block px-4 py-2 border border-gray-400 rounded text-center text-gray-700 hover:bg-blue-600 hover:text-white transition"
+            className="block px-4 py-2 border border-gray-400 rounded text-center text-gray-800 hover:bg-blue-600 hover:text-white transition"
             onClick={() => setIsOpen(false)}
           >
             Check Availability

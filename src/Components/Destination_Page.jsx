@@ -11,9 +11,12 @@ const Destination = () => {
       </h2>
 
       {/* Main heading */}
-      <h1 className="font-['Playfair_Display'] text-[46px] leading-[46px] text-gray-900  mb-[25px]">
+      <h1 className="font-['Playfair_Display'] text-[46px] leading-[46px] text-gray-900  mb-[20px]">
         Where To Begin
       </h1>
+
+      {/*line*/}
+          <span className=" inline-block text-center  w-[100px] h-1 bg-[#515151] mt-1"></span>
 
       {/* Paragraph */}
       <p className="font-['barlow'] text-[17px] font-normal leading-[28px] text-gray-700 mt-4">

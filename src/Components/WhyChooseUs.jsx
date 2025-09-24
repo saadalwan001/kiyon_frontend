@@ -1,5 +1,5 @@
 import React from "react";
-import Button from "@/Components/ui/button"; 
+import Button from "@/Components/ui/button.jsx"; 
 
 const WhyChooseUs = () => {
   return (
@@ -30,7 +30,7 @@ const WhyChooseUs = () => {
 
         {/* Button */}
         <div className="mt-6 text-center">
-          <Button text="READ MORE" />
+          <Button text="READ MORE" size="text-lg" />
         </div>
       </div>
     </section>

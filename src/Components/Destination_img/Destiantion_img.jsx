@@ -1,5 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { ArrowRight, ArrowLeft } from 'lucide-react';
+import Button from '@/Components/ui/Button.jsx';
 
 const destinations = [
   { id: 1, title: 'Anuradhapura', image: '/images/anuradapura.jpg', description: 'Ancient city with historic temples and ruins.' },
@@ -45,73 +46,137 @@ const DesSection = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const itemsPerPage = 8;
   const totalPages = Math.ceil(destinations.length / itemsPerPage);
+  const gridRef = useRef(null);
 
-  const nextPage = () => setCurrentIndex((prev) => (prev + 1) % totalPages);
-  const prevPage = () => setCurrentIndex((prev) => (prev - 1 + totalPages) % totalPages);
+  const nextPage = () =>
+    setCurrentIndex((prev) => (prev < totalPages - 1 ? prev + 1 : 0));
+  const prevPage = () =>
+    setCurrentIndex((prev) => (prev > 0 ? prev - 1 : totalPages - 1));
 
+  // Auto scroll every 6s
+// Auto scroll every 6s
+useEffect(() => {
+  const interval = setInterval(nextPage, 6000);
+  return () => clearInterval(interval);
+}, );
+
+
+  // Fade transition
   useEffect(() => {
-    const interval = setInterval(nextPage, 6000);
-    return () => clearInterval(interval);
-  },);
+    if (gridRef.current) {
+      gridRef.current.style.opacity = 0;
+      setTimeout(() => {
+        if (gridRef.current) gridRef.current.style.opacity = 1;
+      }, 150);
+    }
+  }, [currentIndex]);
 
   const currentDestinations = destinations.slice(
     currentIndex * itemsPerPage,
     currentIndex * itemsPerPage + itemsPerPage
   );
 
+  // Drag/swipe support
+  const startX = useRef(0);
+  const isDragging = useRef(false);
+
+  const handleStart = (x) => {
+    isDragging.current = true;
+    startX.current = x;
+  };
+
+  const handleMove = (x) => {
+    if (!isDragging.current) return;
+    const diff = x - startX.current;
+    if (diff > 100) {
+      prevPage();
+      isDragging.current = false;
+    } else if (diff < -100) {
+      nextPage();
+      isDragging.current = false;
+    }
+  };
+
+  const handleEnd = () => {
+    isDragging.current = false;
+  };
+
   return (
-    <section className="text-center relative py-12 px-4 md:px-12">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-6 py-8">
-        {currentDestinations.map((dest,) => (
-          <a
-            key={dest.id}
-            href="#"
-            className={`relative h-[400px] w-full rounded-xl overflow-hidden shadow-md group cursor-pointer transition-transform duration-300 hover:-translate-y-2
-              ${dest.id % 2 === 0 ? '-mt-6' : 'mt-0'}`} 
-          >
-            <div
-              className="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-110 "
-              style={{ backgroundImage: `url(${dest.image})` }}
-            ></div>
-            {/* Gray overlay */}
-            <div className="absolute inset-0  bg-gray-900/20 transition-opacity duration-500 group-hover:bg-opacity-50"></div>
+    <section className="text-center relative py-12 px-4 md:px-12 mb-[80px]">
+      <div
+        className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 transition-opacity duration-700"
+        ref={gridRef}
+        onMouseDown={(e) => handleStart(e.clientX)}
+        onMouseMove={(e) => handleMove(e.clientX)}
+        onMouseUp={handleEnd}
+        onMouseLeave={handleEnd}
+        onTouchStart={(e) => handleStart(e.touches[0].clientX)}
+        onTouchMove={(e) => handleMove(e.touches[0].clientX)}
+        onTouchEnd={handleEnd}
+      >
+        {/* Grid */}
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 py-8">
+          {currentDestinations.map((dest) => (
+            <a
+              key={dest.id}
+              href="#"
+              className={`relative h-[400px] w-full rounded-xl overflow-hidden shadow-md group cursor-pointer transition-transform duration-300 hover:-translate-y-2
+                ${dest.id % 2 === 0 ? "-mt-6" : "mt-0"}`}
+            >
+              <div
+                className="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-110"
+                style={{ backgroundImage: `url(${dest.image})` }}
+              ></div>
+              <div className="absolute inset-0 bg-gray-900/20 transition-opacity duration-500 group-hover:bg-opacity-50"></div>
 
-            <h3 className="absolute top-6 left-6 font-['Playfair_Display'] text-[28px] leading-[42px] text-white z-10">
-              {dest.title}
-            </h3>
+              <h3 className="absolute top-6 left-6 font-['Playfair_Display'] text-[28px] leading-[42px] text-white z-10">
+                {dest.title}
+              </h3>
 
-            <div className="absolute bottom-0 left-0 w-full  bg-opacity-70 text-white p-4 transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
-              <p className="font-['barlow'] text-[17px] leading-[25px] font-normal mb-2">
-                {dest.description}
-              </p>
-              <div className="flex items-center gap-2 font-barlow text-white font-medium text-[15px]">
-                Read More
-                <span className="w-5 h-5 border border-white rounded-full flex items-center justify-center">
-                  <ArrowRight size={12} />
-                </span>
+              <div className="absolute bottom-0 left-0 w-full bg-opacity-70 text-white p-4 transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+                <p className="font-['barlow'] text-[17px] leading-[25px] font-normal mb-2">
+                  {dest.description}
+                </p>
+                <div className="flex items-center gap-2 font-barlow text-white font-medium text-[15px]">
+                  Read More
+                  <span className="w-5 h-5 border bg-green-500  rounded-full flex items-center justify-center">
+                    <ArrowRight size={12} />
+                  </span>
+                </div>
               </div>
-            </div>
-          </a>
-        ))}
-      </div>
+            </a>
+          ))}
+        </div>
 
-      {/* Navigation Buttons below the grid, bottom right */}
-      <div className="flex justify-end gap-4 mt-6">
-        <button
-          onClick={prevPage}
-          className="w-12 h-12 bg-green-500 rounded-full flex items-center justify-center text-white shadow-lg hover:bg-green-600 transition"
-        >
-          <ArrowLeft size={20} />
-        </button>
-        <button
-          onClick={nextPage}
-          className="w-12 h-12 bg-green-500 rounded-full flex items-center justify-center text-white shadow-lg hover:bg-green-600 transition"
-        >
-          <ArrowRight size={20} />
-        </button>
+        {/* Navigation Buttons */}
+        <div className="flex justify-end gap-4 mt-6">
+          <button
+            onClick={prevPage}
+            className={`w-12 h-12 rounded-full flex items-center justify-center text-white shadow-lg transition ${
+              currentIndex === 0
+                ? "bg-white text-green-500"
+                : "bg-green-500 hover:bg-green-600"
+            }`}
+          >
+            <ArrowLeft size={20} />
+          </button>
+          <button
+            onClick={nextPage}
+            className={`w-12 h-12 rounded-full flex items-center justify-center text-white shadow-lg transition ${
+              currentIndex === totalPages - 1
+                ? "bg-white text-green-500"
+                : "bg-green-500 hover:bg-green-600"
+            }`}
+          >
+            <ArrowRight size={20} />
+          </button>
+        </div>
       </div>
-      </div>
+{/* Button */}
+        <div className="mt-6 text-center">
+          <Button text="READ MORE" size="text-xl" /> 
+          </div>
+      
     </section>
   );
 };

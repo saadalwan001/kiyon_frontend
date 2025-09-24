@@ -47,7 +47,7 @@ const Navigation = () => {
             <Link
               key={idx}
               to={link.href}
-              className={`font-barlow text-[15px] leading-[23px] font-normal transition hover:text-[#25D366] ${
+              className={`font-['barlow'] font-bold text-[15px] leading-[23px]  transition hover:text-[#238B45] ${
                 scrolled ? "text-black" : "text-white/90"
               }`}
             >
@@ -58,11 +58,11 @@ const Navigation = () => {
           {/* Check Availability */}
           <Link
             to="/check-availability"
-            className={`ml-4 px-4 py-2 border rounded font-['Playfair_Display'] text-[15px] leading-[23px] font-normal transition hover:bg-[#25D366] hover:text-black ${
+            className={`ml-4 px-4 py-2 border rounded font-['Playfair_Display'] text-[15px] leading-[23px] font-normal transition hover:bg-[#238B45] hover:text-white ${
               scrolled ? "border-black text-black" : "border-white/90 text-white"
             }`}
           >
-            Check Availability
+            Check Availability 
           </Link>
         </nav>
 

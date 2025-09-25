@@ -11,6 +11,7 @@ import Footer from "./Components/Footer";
 
 
 
+
 export default function homePage() {
   return (
     <>
@@ -23,6 +24,7 @@ export default function homePage() {
     <Packages/>
     <GetInTouch/>
     <Footer/>
+    
     </>
   )
 }

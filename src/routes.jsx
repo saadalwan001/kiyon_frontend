@@ -3,6 +3,7 @@ import { Routes, Route } from "react-router-dom";
 
 //All Pages
 import Home from "@/homePage";
+import AboutUs from "@/About_us.jsx"
 
 
 
@@ -14,6 +15,8 @@ import Home from "@/homePage";
     <Routes>
     {/*open accesible pages*/}
     <Route path="/" element={<Home/>}/>
+
+    <Route path="/AboutUs" element={<AboutUs/>}/>
 
 
     </Routes>

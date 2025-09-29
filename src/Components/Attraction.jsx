@@ -29,14 +29,14 @@ const Attraction = () => {
     <section className="relative  mb-[80px]">
       {/* Background Section */}
       <div
-        className="relative bg-cover bg-center  h-[750px] flex flex-col items-center justify-center text-white"
+        className="relative bg-cover bg-center  h-[750px] flex flex-col items-center justify-center text-black"
         style={{ backgroundImage: `url('/Attraction_bg.jpg')` }}
       >
-        <h2 className="text-2xl md:text-3xl font-['barlow'] font-medium mb-2 mt-[-400px]">
-          Things to Do
+        <h2 className="text-2xl md:text-3xl font-['barlow'] font-medium mb-2 mt-[-400px] text-gray-500">
+          Gallery
         </h2>
         <h1 className="text-4xl md:text-5xl font-['Playfair_Display'] font-bold text-center px-4">
-          Attractions And Experiences
+          A Visual Journey Through Sri Lanka
         </h1>
         {/*line*/}
           <span className=" inline-block text-center  w-[100px] h-1 bg-white mt-5"></span>
@@ -69,12 +69,7 @@ const Attraction = () => {
               <p className="font-['barlow'] text-[16px] leading-[24px] mb-3">
                 {item.description}
               </p>
-              <div className="flex items-center gap-3 font-['barlow'] font-medium text-[15px]">
-                Discover More
-                <span className="w-7 h-7 bg-green-500 rounded-full flex items-center justify-center">
-                  <ArrowRight size={14} className="text-white" />
-                </span>
-              </div>
+              
             </div>
           </a>
         ))}

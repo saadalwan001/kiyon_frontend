@@ -7,6 +7,7 @@ import AboutUs from "@/About_us.jsx"
 import Destination from "@/Destination.jsx"
 import Packages from "@/Packages.jsx"
 import Gallery from "./Gallery";
+import Contact from "./Contact";
 
 
 
@@ -23,6 +24,7 @@ import Gallery from "./Gallery";
     <Route path="/Destination" element={<Destination/>}/>
     <Route path="/Packages" element={<Packages/>}/>
     <Route path="/Gallery" element={<Gallery/>}/>
+    <Route path="/Contact" element={<Contact/>}/>
 
 
     </Routes>

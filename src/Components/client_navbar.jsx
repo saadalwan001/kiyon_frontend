@@ -12,7 +12,7 @@ const Navigation = () => {
     { name: "Destinations", href: "/Destination" },
     { name: "Packages", href: "/Packages" },
     { name: "Gallery", href: "/Gallery" },
-    { name: "Contact Us", href: "/contact" },
+    { name: "Contact Us", href: "/Contact" },
   ];
 
   // Track scroll to change navbar text color
@@ -57,12 +57,12 @@ const Navigation = () => {
 
           {/* Check Availability */}
           <Link
-            to="/check-availability"
+            to="/Contact"
             className={`ml-4 px-4 py-2 border rounded font-['Playfair_Display'] text-[15px] leading-[23px] font-normal transition hover:bg-[#238B45] hover:text-white ${
               scrolled ? "border-black text-black" : "border-white/90 text-white"
             }`}
           >
-            Check Availability 
+            Customize Your Tour Package 
           </Link>
         </nav>
 

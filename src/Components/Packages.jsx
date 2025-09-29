@@ -1,5 +1,5 @@
 import React from "react";
-import { ArrowRight } from "lucide-react";
+import { Clock, ArrowRight } from "lucide-react";
 import Button from "./ui/Button";
 
 const data = [
@@ -7,20 +7,31 @@ const data = [
     id: 1,
     image: "/colombo.jpg",
     title: "Capital Charm: Colombo Experience",
+    days: "3 Days",
+    description: "Discover Colombo’s colonial charm, bustling markets, and modern lifestyle with a guided city adventure.",
   },
   {
     id: 2,
     image: "/nuwara.jpg",
     title: "Misty Escapes: Little England Experience",
+    days: "5 Days",
+    description: "Breathe in fresh mountain air as you explore Nuwara Eliya’s tea plantations, waterfalls, and misty hills.",
   },
   {
     id: 3,
     image: "/kandy.jpg",
     title: "Sacred City: Kandy Experience",
+    days: "7 Days",
+    description: "Step into history with visits to Anuradhapura, Polonnaruwa, and Sigiriya — Sri Lanka’s cultural heartland.",
   },
 ];
 
 const Experience = () => {
+  const truncateWords = (text, wordLimit) => {
+    const words = text.split(" ");
+    return words.length > wordLimit ? words.slice(0, wordLimit).join(" ") + "..." : text;
+  };
+
   return (
     <section className="relative bg-white py-20 mb-[80px]">
       {/* Headings */}
@@ -36,32 +47,43 @@ const Experience = () => {
         <span className="inline-block w-[100px] h-1 bg-gray-800 mt-5"></span>
       </div>
 
-      {/* Cards */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-3 gap-10 h-[550px]">
+      {/* Cards Grid */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
         {data.map((item) => (
-          <div
+          <a
             key={item.id}
-            className="group bg-white rounded-xl shadow-lg overflow-hidden cursor-pointer transition-transform duration-300 hover:-translate-y-2"
+            href="#"
+            className="block bg-white rounded-2xl shadow hover:shadow-lg transition overflow-hidden group"
           >
             {/* Image */}
-            <div
-              className="h-[350px] w-full bg-cover bg-center"
-              style={{ backgroundImage: `url(${item.image})` }}
-            ></div>
+            <div className="p-2">
+              <img
+                src={item.image}
+                alt={item.title}
+                className="rounded-xl w-full h-48 object-cover"
+              />
+            </div>
 
-            {/* Bottom Section */}
-            <div className="p-6 flex flex-col justify-between">
-              <h3 className="font-['Playfair_Display'] text-[28px] leading-[42px] font-normal text-gray-900 mb-4">
+            {/* Content */}
+            <div className="p-4 space-y-3">
+              <h3 className="text-xl font-semibold text-gray-800 group-hover:text-green-600">
                 {item.title}
               </h3>
-              <div className="flex items-center gap-3 font-['barlow'] text-gray-800 font-medium text-[15px]">
-                Read More
-                <span className="w-8 h-8 bg-green-500 rounded-full flex items-center justify-center">
-                  <ArrowRight size={16} className="text-white" />
+
+              <div className="flex items-center text-gray-500 text-sm gap-2">
+                <Clock size={16} /> <span>{item.days}</span>
+              </div>
+
+              <p className="text-gray-600 text-sm">{truncateWords(item.description, 15)}</p>
+
+              <div className="flex items-center gap-2 text-green-600 font-medium mt-2">
+                <span>See More</span>
+                <span className="flex items-center justify-center w-6 h-6 rounded-full bg-green-100">
+                  <ArrowRight size={16} />
                 </span>
               </div>
             </div>
-          </div>
+          </a>
         ))}
       </div>
 

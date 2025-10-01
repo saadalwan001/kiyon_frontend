@@ -63,38 +63,49 @@ const DesSection = () => {
     <section className="text-center relative py-12 px-4 md:px-12 mb-[80px]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Grid */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 py-8">
-          {destinations.slice(0, visibleCount).map((dest) => (
-            <a
-              key={dest.id}
-              href="#"
-              className={`relative h-[400px] w-full rounded-xl overflow-hidden shadow-md group cursor-pointer transition-transform duration-300 hover:-translate-y-2
-                ${dest.id % 2 === 0 ? "-mt-6" : "mt-0"}`}
-            >
-              <div
-                className="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-110"
-                style={{ backgroundImage: `url(${dest.image})` }}
-              ></div>
-              <div className="absolute inset-0 bg-gray-900/20 transition-opacity duration-500 group-hover:bg-opacity-50"></div>
+<div className="grid grid-cols-2 md:grid-cols-4 gap-6 py-8">
+  {destinations.slice(0, visibleCount).map((dest) => (
+    <a
+      key={dest.id}
+      href="#"
+      className="relative h-[400px] w-full rounded-xl overflow-hidden shadow-md group cursor-pointer transition-transform duration-300 hover:-translate-y-2"
+    >
+      {/* Background Image */}
+      <div
+        className="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-110"
+        style={{ backgroundImage: `url(${dest.image})` }}
+      ></div>
 
-              <h3 className="absolute top-6 left-6 font-['Playfair_Display'] text-[28px] leading-[42px] text-white z-10">
-                {dest.title}
-              </h3>
+      {/* Dark overlay for hover effect */}
+      <div className="absolute inset-0 bg-gray-900/20 transition-opacity duration-500 group-hover:bg-opacity-50"></div>
 
-              <div className="absolute bottom-0 left-0 w-full bg-opacity-70 text-white p-4 transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
-                <p className="font-['barlow'] text-[17px] leading-[25px] font-normal mb-2">
-                  {dest.description}
-                </p>
-                <div className="flex items-center gap-2 font-barlow text-white font-medium text-[15px]">
-                  Read More
-                  <span className="w-5 h-5 border bg-green-500 rounded-full flex items-center justify-center">
-                    <ArrowRight size={12} />
-                  </span>
-                </div>
-              </div>
-            </a>
-          ))}
+      {/* Title */}
+      <h3
+        className="absolute left-5 bottom-5 font-['Playfair_Display'] text-[24px] md:text-[28px] leading-tight text-white z-10
+                   transition-transform duration-300 group-hover:translate-y-[-100px]"
+      >
+        {dest.title}
+      </h3>
+
+      {/* Hover Content */}
+      <div
+        className="absolute bottom-0 left-0 w-full bg-black/50 text-white p-5 pt-0 transform translate-y-full 
+                   group-hover:translate-y-0 transition-transform duration-300"
+      >
+        <p className="font-['barlow'] text-[16px] leading-[24px] mb-3 text-left">
+          {dest.description}
+        </p>
+        <div className="flex items-center gap-3 font-['barlow'] font-medium text-[15px]">
+          Discover More
+          <span className="w-7 h-7 bg-green-500 rounded-full flex items-center justify-center">
+            <ArrowRight size={14} className="text-white" />
+          </span>
         </div>
+      </div>
+    </a>
+  ))}
+</div>
+
 
         {/* Load More Button */}
 {/* Load More / Show Less Button */}

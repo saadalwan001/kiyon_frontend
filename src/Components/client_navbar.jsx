@@ -31,11 +31,11 @@ const Navigation = () => {
 
   return (
     <header
-      className={`fixed top-0 w-full z-50 backdrop-blur-md border-b transition-colors duration-300 ${
+      className={`fixed top-0 w-full z-[200] backdrop-blur-md border-b transition-colors duration-300 ${
         scrolled ? "bg-white/90 border-gray-300" : "bg-gray-200/25 border-gray-300"
       }`}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-20">
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-20">
         {/* LOGO */}
         <Link to="/" className="flex items-center mr-4">
           <img src="#" alt="Logo" className="h-12 w-auto" />
@@ -47,7 +47,7 @@ const Navigation = () => {
             <Link
               key={idx}
               to={link.href}
-              className={`font-['barlow'] font-bold text-[15px] leading-[23px]  transition hover:text-[#238B45] ${
+              className={`font-['barlow'] font-bold text-[15px] leading-[23px] transition hover:text-[#238B45] ${
                 scrolled ? "text-black" : "text-white/90"
               }`}
             >
@@ -55,21 +55,25 @@ const Navigation = () => {
             </Link>
           ))}
 
-          {/* Check Availability */}
+          {/* Customize Tour Button */}
           <Link
             to="/Contact"
             className={`ml-4 px-4 py-2 border rounded font-['Playfair_Display'] text-[15px] leading-[23px] font-normal transition hover:bg-[#238B45] hover:text-white ${
               scrolled ? "border-black text-black" : "border-white/90 text-white"
             }`}
           >
-            Customize Your Tour Package 
+            Customize Your Tour Package
           </Link>
         </nav>
 
         {/* MOBILE MENU TOGGLE */}
         <div className="lg:hidden">
           <button onClick={() => setIsOpen(!isOpen)} aria-label="Toggle menu">
-            {isOpen ? <X size={28} color={scrolled ? "black" : "white"} /> : <Menu size={28} color={scrolled ? "black" : "white"} />}
+            {isOpen ? (
+              <X size={28} color={scrolled ? "black" : "white"} />
+            ) : (
+              <Menu size={28} color={scrolled ? "black" : "white"} />
+            )}
           </button>
         </div>
       </div>
@@ -91,8 +95,9 @@ const Navigation = () => {
               {link.name}
             </Link>
           ))}
+
           <Link
-            to="/check-availability"
+            to="/Contact"
             className="block px-4 py-2 border border-gray-400 rounded text-center font-['Playfair_Display'] text-[15px] leading-[23px] font-normal text-gray-800 hover:bg-blue-600 hover:text-white transition"
             onClick={() => setIsOpen(false)}
           >

@@ -107,7 +107,7 @@ const Contact = () => {
                       type="text"
                       placeholder="Enter Your Name"
                       required
-                      className="mt-1 block w-full h-[60px] bg-[#78e29b] rounded-md p-2 text-[#75798B] border-none focus:outline-none"
+                      className="mt-1 block w-full h-[60px] bg-[#d5f0de] rounded-md p-2 text-[#656566] border-none focus:outline-none"
                     />
                   </div>
                   <div>
@@ -118,7 +118,7 @@ const Contact = () => {
                       type="email"
                       placeholder="Enter Your Email"
                       required
-                      className="mt-1 block w-full h-[60px] bg-[#78e29b] rounded-md p-2 text-[#75798B] border-none focus:outline-none"
+                      className="mt-1 block w-full h-[60px] bg-[#d5f0de] rounded-md p-2 text-[#656566] border-none focus:outline-none"
                     />
                   </div>
                 </div>
@@ -132,7 +132,7 @@ const Contact = () => {
                     <input
                       type="tel"
                       placeholder="Enter Your Mobile Number"
-                      className="mt-1 block w-full h-[60px] bg-[#78e29b] rounded-md p-2 text-[#75798B] border-none focus:outline-none"
+                      className="mt-1 block w-full h-[60px] bg-[#d5f0de] rounded-md p-2 text-[#656566] border-none focus:outline-none"
                     />
                   </div>
                   <div>
@@ -143,7 +143,7 @@ const Contact = () => {
                       type="text"
                       placeholder="Enter Your Country"
                       required
-                      className="mt-1 block w-full h-[60px] bg-[#78e29b] rounded-md p-2 text-[#75798B] border-none focus:outline-none"
+                      className="mt-1 block w-full h-[60px] bg-[#d5f0de] rounded-md p-2 text-[#656566] border-none focus:outline-none"
                     />
                   </div>
                 </div>
@@ -178,7 +178,7 @@ const Contact = () => {
                   <textarea
                     rows="6"
                     placeholder="Enter Your Message"
-                    className="mt-1 block w-full bg-[#78e29b] rounded-md p-4 text-[#75798B] border-none focus:outline-none"
+                    className="mt-1 block w-full bg-[#d5f0de] rounded-md p-4 text-[#656566] border-none focus:outline-none"
                   ></textarea>
                 </div>
 

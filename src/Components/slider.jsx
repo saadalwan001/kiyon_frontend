@@ -18,7 +18,7 @@ const Slider = () => {
       {images.map((img, index) => (
         <div
           key={index}
-          className={`absolute top-0 left-0 w-screen h-screen transition-opacity duration-[2000ms] ease-in-out
+          className={`absolute top-0 left-0 w-full h-screen transition-opacity duration-[2000ms] ease-in-out
             ${index === current ? "opacity-100 z-10" : "opacity-0 z-0"}
           `}
           style={{
@@ -38,7 +38,7 @@ const Slider = () => {
           VISIT. VENTURE. VALUE.
         </h1>
         <p className="mt-4 font-['barlow'] text-[20px] leading-[30px] font-normal">
-          KIYON TRAVELS & TOURS
+           Kiyon Travels & Tours
         </p>
       </div>
     </div>

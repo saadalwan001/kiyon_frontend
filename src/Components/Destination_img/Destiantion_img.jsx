@@ -141,7 +141,7 @@ useEffect(() => {
 
       {/* Hover Content - slides up */}
       <div
-        className="absolute bottom-0 left-0 w-full bg-black/50 text-white p-5 pt-20 transform translate-y-full 
+        className="absolute bottom-0 left-0 w-full bg-black/50 text-white p-5 pt-0 transform translate-y-full 
                    group-hover:translate-y-0 transition-transform duration-300"
       >
         <p className="font-['barlow'] text-[16px] leading-[24px] mb-3 text-left">
@@ -164,32 +164,36 @@ useEffect(() => {
           
 
         {/* Navigation Buttons */}
-        <div className="flex justify-end gap-4 mt-6">
-          <button
-            onClick={prevPage}
-            className={`w-12 h-12 rounded-full flex items-center justify-center text-white shadow-lg transition ${
-              currentIndex === 0
-                ? "bg-white text-green-500"
-                : "bg-green-500 hover:bg-green-600"
-            }`}
-          >
-            <ArrowLeft size={20} />
-          </button>
-          <button
-            onClick={nextPage}
-            className={`w-12 h-12 rounded-full flex items-center justify-center text-white shadow-lg transition ${
-              currentIndex === totalPages - 1
-                ? "bg-white text-green-500"
-                : "bg-green-500 hover:bg-green-600"
-            }`}
-          >
-            <ArrowRight size={20} />
-          </button>
-        </div>
+<div className="flex justify-end gap-4 mt-6">
+  {/* Prev Button */}
+  <button
+    onClick={prevPage}
+    disabled={currentIndex === 0}
+    className={`w-12 h-12 rounded-full flex items-center justify-center shadow-lg transition
+      ${currentIndex === 0 
+        ? "bg-white text-gray-400 cursor-not-allowed" 
+        : "bg-green-500 text-white hover:bg-green-600"}`}
+  >
+    <ArrowLeft size={20} />
+  </button>
+
+  {/* Next Button */}
+  <button
+    onClick={nextPage}
+    disabled={currentIndex === totalPages - 1}
+    className={`w-12 h-12 rounded-full flex items-center justify-center shadow-lg transition
+      ${currentIndex === totalPages - 1 
+        ? "bg-white text-gray-400 cursor-not-allowed" 
+        : "bg-green-500 text-white hover:bg-green-600"}`}
+  >
+    <ArrowRight size={20} />
+  </button>
+</div>
+
       </div>
 {/* Button */}
         <div className="mt-6 text-center">
-          <Button text="READ MORE" size="text-xl" /> 
+          <Button text="SEE MORE" link="/Destination" size="text-xl" /> 
           </div>
       
     </section>

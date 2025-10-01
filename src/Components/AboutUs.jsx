@@ -37,7 +37,7 @@ const AboutUs = () => {
             let Kiyon Travels & Tours guide you to moments that stay with you
   </p>
   <div className="w-full">
-    <Button text="READ MORE" size="text-lg" />
+    <Button text="READ MORE"  link="/AboutUs" size="text-lg" />
   </div>
 </div>
 

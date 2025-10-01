@@ -89,7 +89,7 @@ const Experience = () => {
 
       {/* Button */}
       <div className="mt-16 text-center px-4 sm:px-6 lg:px-8">
-        <Button text="READ MORE" size="text-xl" />
+        <Button text="READ MORE" link="/Packages" size="text-xl" />
       </div>
     </section>
   );

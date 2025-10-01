@@ -8,6 +8,7 @@ import Attraction from "./Components/Attraction";
 import Packages from "./Components/Packages.jsx"
 import GetInTouch from "./Components/GetInTouch";
 import Footer from "./Components/Footer";
+import GallerySlider from "./Components/GallerySlider";
 
 
 
@@ -21,7 +22,7 @@ export default function homePage() {
     <WhyChooseUs/>
     <Destination/>
     <Attraction/>
-    <Packages/>
+    <GallerySlider/>
     <GetInTouch/>
     <Footer/>
     

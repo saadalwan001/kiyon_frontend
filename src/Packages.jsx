@@ -96,7 +96,7 @@ export default function Packages() {
 
 
       {/* Package Section */}
-       <section className="py-16 bg-gray-50">
+       <section className="py-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Cards Grid */}
         <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">

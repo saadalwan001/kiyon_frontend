@@ -18,17 +18,17 @@ const WhyChooseUs = () => {
         <div className="bg-white rounded-3xl p-8 md:p-16 shadow-lg w-full max-w-[550px] h-[700px] 
                         flex flex-col justify-center text-center
                         mx-auto md:mx-0 mt-[150px]">
-          <h2 className="text-2xl md:text-3xl font-normal text-gray-900 font-['Times_New_Roman']">
+          <h2 className="text-2xl md:text-3xl font-bold secondary-text-gradient font-['Times_New_Roman']">
             Why Choose Us?
           </h2>
 
-          <h3 className="text-lg md:text-4xl font-semibold text-[#238B45] font-['Times_New_Roman'] mt-5 mb-5">
+          <h3 className="text-2xl md:text-4xl font-semibold gradient-text-animated font-['Times_New_Roman'] mt-5 mb-5">
             Turning Journeys Into Unforgettable Memories
             <br />
             <span className="inline-block w-[100px] h-1 bg-[#515151] mt-2 mx-auto md:mx-0"></span>
           </h3>
 
-          <p className="mx-auto md:mx-0 mt-4 text-gray-700 text-sm md:text-base px-4 md:px-0">
+          <p className="mx-auto md:mx-0 mt-4 text-gray-700 text-sm md:text-base px-4 md:px-0 para">
             Sri Lanka is a mesmerizing island where golden shores meet misty highlands and ancient wonders. 
             It’s a destination that beautifully intertwines culture, nature, and history, offering unforgettable experiences for every traveler.
           </p>

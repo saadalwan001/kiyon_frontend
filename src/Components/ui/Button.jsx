@@ -13,16 +13,17 @@ const Button = ({ text, link, size }) => {
       to={link}
       className={`group relative inline-block font-['barlow'] font-bold ${sizeClasses} text-[#515151] transition-colors duration-300 pb-1`} // added pb-1 for space
     >
-      {/* Button Text */}
-      <span className="inline-block transition-colors duration-300 group-hover:text-[#238B45]">
+      {/* Button Text with gradient hover */}
+      <span className="inline-block transition duration-300 group-hover:bg-gradient-to-r group-hover:from-[#F52B74] group-hover:to-[#FD8908] group-hover:bg-clip-text group-hover:text-transparent">
         {text}
       </span>
 
       {/* Bottom Line */}
-      <span className="absolute left-0 bottom-0 w-full h-1 bg-[#515151]"></span>
+      <span className="absolute left-0 bottom-0 w-full h-1 bg-[#515151] group-hover:bg-gradient-to-r group-hover:from-[#F52B74] group-hover:to-[#FD8908] transition-all duration-300"></span>
 
       {/* Hover Fill Effect */}
-      <span className="absolute left-0 bottom-0 w-full h-1 bg-[#238B45] transform scale-x-0 origin-right transition-transform duration-500 group-hover:scale-x-100"></span>
+      <span className="font-bold text-[15px] leading-[26px] italic max-w-[500px] mt-[30px]
+  hover:bg-gradient-to-r hover:from-[#F52B74] hover:to-[#FD8908] hover:bg-clip-text hover:text-transparent"></span>
     </Link>
   );
 };

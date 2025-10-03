@@ -37,7 +37,7 @@ const Slider = () => {
         <h1 className="font-['Playfair_Display'] text-[58px] leading-[75px] font-normal tracking-wide">
           VISIT. VENTURE. VALUE.
         </h1>
-        <p className="mt-4 font-['barlow'] text-[20px] leading-[30px] font-normal">
+        <p className="mt-4 font-['barlow'] text-[20px] leading-[30px] font-normal text-white">
            Kiyon Travels & Tours
         </p>
       </div>

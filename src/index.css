@@ -11,3 +11,58 @@ body {
   font-family: 'Inter', sans-serif;
   background-color: #FFFFFF;
 }
+
+.gradient-text-animated {
+  background: linear-gradient(90deg, #F52B74, #FD8908, #F52B74);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: gradientMove 3s linear infinite;
+}
+
+@keyframes gradientMove {
+  to {
+    background-position: 200% center;
+  }
+}
+
+.secondary-text-gradient {
+  background: linear-gradient(90deg, #0CE3DE 0%, #011B36 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.button-color {
+  background: linear-gradient(90deg, #F52B74 0%, #FD8908 100%);
+  color: white; /* text/icon color */
+}
+
+.para{
+  color: #041735
+}
+
+.button-color:hover {
+  background: #FF3A4B;
+  transform: scale(1.05);
+}
+
+.sub-button-color {
+  background: linear-gradient(90deg, #F52B74 0%, #FD8908 100%);
+  color: white; /* text/icon color */
+}
+
+.sub-button-color:hover {
+  background: #FF3A4B;
+  transition: transform 1s ease;
+  
+}
+
+
+.social-button:hover{
+background: linear-gradient(90deg, #F52B74 0%, #FD8908 100%);
+  color: white; /* text/icon color */
+}
+
+

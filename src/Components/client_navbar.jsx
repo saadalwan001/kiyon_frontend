@@ -38,7 +38,7 @@ const Navigation = () => {
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-20">
         {/* LOGO */}
         <Link to="/" className="flex items-center mr-4">
-          <img src="#" alt="Logo" className="h-12 w-auto" />
+          <img src="/logo.png" alt="Logo" className="h-15 w-auto" />
         </Link>
 
         {/* DESKTOP NAVIGATION */}
@@ -47,7 +47,7 @@ const Navigation = () => {
             <Link
               key={idx}
               to={link.href}
-              className={`font-['barlow'] font-bold text-[15px] leading-[23px] transition hover:text-[#238B45] ${
+              className={`font-['barlow'] font-bold text-[15px] leading-[23px] transition hover:text-[#FF3A4B] hover:font-extrabold ${
                 scrolled ? "text-black" : "text-white/90"
               }`}
             >
@@ -57,13 +57,16 @@ const Navigation = () => {
 
           {/* Customize Tour Button */}
           <Link
-            to="/Contact"
-            className={`ml-4 px-4 py-2 border rounded font-['Playfair_Display'] text-[15px] leading-[23px] font-normal transition hover:bg-[#238B45] hover:text-white ${
-              scrolled ? "border-black text-black" : "border-white/90 text-white"
-            }`}
-          >
-            Customize Your Tour Package
-          </Link>
+      to="/Contact"
+      className={`block px-4 py-2 border border-gray-400 rounded text-center font-['Playfair_Display'] text-[15px] leading-[23px] font-normal
+                  transition duration-300
+                  ${scrolled ? "text-black" : "text-white"}
+                  hover:bg-gradient-to-r hover:from-[#F52B74] hover:to-[#FD8908] hover:text-white`}
+      onClick={() => setIsOpen(false)}
+    >
+      Customize Your Tour Package
+    </Link>
+
         </nav>
 
         {/* MOBILE MENU TOGGLE */}
@@ -89,20 +92,24 @@ const Navigation = () => {
             <Link
               key={idx}
               to={link.href}
-              className="block font-['barlow'] text-[15px] leading-[23px] font-normal text-gray-900 hover:text-blue-500"
+              className="block font-['barlow'] text-[15px] leading-[23px] font-normal  text-black hover:text-[#FF3A4B] hover:font-extrabold "
               onClick={() => setIsOpen(false)}
             >
               {link.name}
             </Link>
           ))}
 
-          <Link
-            to="/Contact"
-            className="block px-4 py-2 border border-gray-400 rounded text-center font-['Playfair_Display'] text-[15px] leading-[23px] font-normal text-gray-800 hover:bg-blue-600 hover:text-white transition"
-            onClick={() => setIsOpen(false)}
-          >
-            Check Availability
-          </Link>
+         <Link
+  to="/Contact"
+  className="block px-4 py-2 border border-gray-400 rounded text-center font-['Playfair_Display'] text-[15px] leading-[23px] font-normal text-gray-800 
+             transition duration-300
+             hover:text-white
+             hover:bg-gradient-to-r hover:from-[#F52B74] hover:to-[#FD8908]"
+  onClick={() => setIsOpen(false)}
+>
+  Customize Your Tour Package
+</Link>
+
         </div>
       </div>
     </header>

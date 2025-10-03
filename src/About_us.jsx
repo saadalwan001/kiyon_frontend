@@ -36,7 +36,7 @@ const AboutUs = () => {
 
   {/* Right Column (Text aligned to image height) */}
   <div className="flex flex-col justify-between h-full">
-    <h2 className="text-5xl font-bold mb-4 font-['Playfair_Display']">This is Us</h2>
+    <h2 className="text-5xl font-bold mb-4 font-['Playfair_Display'] md:text-left text-center">This is Us</h2>
 
     <p className="mb-4 text-xl text-gray-700 leading-relaxed font-['barlow'] text-justify">
       At <span className="font-semibold">Kiyon Travels & Tours</span>, we

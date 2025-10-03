@@ -5,52 +5,52 @@ const Footer = () => {
   return (
     <footer className="bg-[#303030] text-white pt-[80px]">
       {/* Top section with 4 columns */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 grid grid-cols-1 md:grid-cols-4 gap-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 grid grid-cols-1 md:grid-cols-4 gap-8 md:items-center">
         
-        {/*  Column 1 - Logo */}
-        <div className="flex flex-col">
+        {/* Column 1 - Logo */}
+        <div className="flex flex-col md:self-start">
           <img
             src="/logo.png"
             alt="Kiyon Travels & Tours Logo"
-            className="w-[180px] h-auto object-contain"
+            className="w-[150px] h-auto object-contain"
           />
         </div>
 
-        {/*  Column 2 - Links */}
-        <div className="flex flex-col space-y-3 font-['barlow'] font-bold">
-          <a href="#" className="hover:text-[#238B45] transition">Home</a>
-          <a href="#" className="hover:text-[#238B45] transition">About Us</a>
-          <a href="#" className="hover:text-[#238B45] transition">Destination</a>
+        {/* Column 2 - Links */}
+        <div className="flex flex-col space-y-3 font-['barlow'] font-bold md:self-center">
+          <a href="/" className="hover:text-[#FF3A4B] transition">Home</a>
+          <a href="/AboutUs" className="hover:text-[#FF3A4B] transition">About Us</a>
+          <a href="/Destination" className="hover:text-[#FF3A4B] transition">Destination</a>
         </div>
 
         {/* Column 3 - More Links */}
-        <div className="flex flex-col space-y-3 font-['barlow'] font-bold">
-          <a href="#" className="hover:text-[#238B45] transition">Packages</a>
-          <a href="#" className="hover:text-[#238B45] transition">Gallery</a>
-          <a href="#" className="hover:text-[#238B45] transition">Contact Us</a>
+        <div className="flex flex-col space-y-3 font-['barlow'] font-bold md:self-center">
+          <a href="/Packages" className="hover:text-[#FF3A4B] transition">Packages</a>
+          <a href="/Gallery" className="hover:text-[#FF3A4B] transition">Gallery</a>
+          <a href="/Contact" className="hover:text-[#FF3A4B] transition">Contact Us</a>
         </div>
 
         {/* Column 4 - Contact Info */}
-        <div className="flex flex-col space-y-3 font-['barlow'] font-bold">
+        <div className="flex flex-col space-y-3 font-['barlow'] font-bold md:self-center">
           <a
             href="https://www.google.com/maps/place/123+Main+Street,+Colombo"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-2 hover:text-[#238B45] transition-colors"
+            className="flex items-center gap-2 hover:text-[#FF3A4B] transition-colors"
           >
             <MapPin size={18} />
             <span>123 Main Street, Colombo</span>
           </a>
           <a
             href="tel:+94711234567"
-            className="flex items-center gap-2 hover:text-[#238B45] transition-colors"
+            className="flex items-center gap-2 hover:text-[#FF3A4B] transition-colors"
           >
             <Phone size={18} />
             <span>+94 71 123 4567</span>
           </a>
           <a
             href="mailto:info@kiyontravels.com"
-            className="flex items-center gap-2 hover:text-[#238B45] transition-colors"
+            className="flex items-center gap-2 hover:text-[#FF3A4B] transition-colors"
           >
             <Mail size={18} />
             <span>info@kiyontravels.com</span>
@@ -75,44 +75,43 @@ const Footer = () => {
               placeholder="Enter your email"
               className="flex-1 px-4 py-4 rounded-l-lg outline-none text-black bg-white font-['barlow']"
             />
-            <button className="bg-[#238B45] px-4 py-2 rounded-r-lg hover:bg-green-600 transition font-['barlow'] font-bold">
+            <button className="sub-button-color px-4 py-2 rounded-r-lg hover:bg-green-600 transition font-['barlow'] font-bold">
               Subscribe
             </button>
           </div>
         </div>
 
         {/* Right Column - Socials + Copyright */}
-<div className="flex flex-col items-center md:items-end space-y-4">
-  {/* Social Icons */}
-  <div className="flex gap-4">
-    <a
-      href="#"
-      className="w-10 h-10 flex items-center justify-center border border-white rounded-full text-white transition-all duration-300 hover:bg-[#238B45] hover:border-[#238B45]"
-    >
-      <Facebook size={24} />
-    </a>
-    <a
-      href="#"
-      className="w-10 h-10 flex items-center justify-center border border-white rounded-full text-white transition-all duration-300 hover:bg-[#238B45] hover:border-[#238B45]"
-    >
-      <Instagram size={24} />
-    </a>
-  </div>
+        <div className="flex flex-col items-center md:items-end space-y-4">
+          {/* Social Icons */}
+          <div className="flex gap-4">
+            <a
+              href="#"
+              className="w-10 h-10 flex items-center justify-center border border-white rounded-full text-white transition-all duration-300 social-button"
+            >
+              <Facebook size={24} />
+            </a>
+            <a
+              href="#"
+              className="w-10 h-10 flex items-center justify-center border border-white rounded-full text-white transition-all duration-300 social-button"
+            >
+              <Instagram size={24} />
+            </a>
+          </div>
 
-  {/* Copyright */}
-  <p className="text-sm text-white font-['barlow'] font-bold text-center md:text-right">
-    All rights Reserved by © Kiyon Travels & Tours |{" "}
-    <a
-      href="https://corechipdigital.com/"
-      target="_blank"
-      rel="noopener noreferrer"
-      className="hover:text-[#238B45] transition-colors block md:inline"
-    >
-      Powered by CoreChip Digital
-    </a>
-  </p>
-</div>
-
+          {/* Copyright */}
+          <p className="text-sm text-white font-['barlow'] font-bold text-center md:text-right">
+            All rights Reserved by © Kiyon Travels & Tours |{" "}
+            <a
+              href="https://corechipdigital.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-[#FF3A4B] transition-colors block md:inline"
+            >
+              Powered by CoreChip Digital
+            </a>
+          </p>
+        </div>
       </div>
     </footer>
   );

@@ -18,14 +18,17 @@ const AboutUs = () => {
         {/* Right Content */}
 <div className="w-full md:w-7/12 flex flex-col justify-center items-start text-left md:text-left">
   <div>
-    <h2 className="font-['Playfair_Display'] text-[50px] leading-[50px] font-normal text-gray-900">
-      Kiyon Travels & Tours
-    </h2>
-    <p className="font-['barlow'] text-[15px] leading-[26px] font-bold text-[#238B45] italic max-w-[500px] mt-[30px]">
-      Welcome to Kiyon Travels & Tours – Your Gateway to Sri Lanka
-    </p>
+   <h2 className="font-['playfair'] text-[55px] leading-[60px] font-normal text-center gradient-text-animated">
+  Kiyon Travels & Tours
+</h2>
+
+
+    <p className="font-barlow text-[15px] leading-[26px] font-bold  max-w-[500px] mt-[30px] secondary-text-gradient">
+  Welcome to Kiyon Travels & Tours – Your Gateway to Sri Lanka
+</p>
+
   </div>
-  <p className="mt-6 font-['barlow'] text-[15px] leading-[26px] font-bold text-gray-700 text-justify max-w-[500px] mb-[30px]">
+  <p className="mt-6 font-['barlow'] text-[15px] leading-[26px] font-semibold  text-justify max-w-[500px] mb-[30px] para">
             At Kiyon Travels & Tours, we create unforgettable journeys across
             Sri Lanka’s most enchanting destinations. From bustling tourist
             hotspots to hidden gems off the beaten path, every experience is
@@ -36,7 +39,7 @@ const AboutUs = () => {
             Sri Lanka’s spirit to life in every itinerary. Explore, indulge, and
             let Kiyon Travels & Tours guide you to moments that stay with you
   </p>
-  <div className="w-full">
+  <div className="w-full text-center md:text-left">
     <Button text="READ MORE"  link="/AboutUs" size="text-lg" />
   </div>
 </div>

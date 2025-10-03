@@ -21,7 +21,11 @@ const StackedGallerySlider = () => {
   return (
     <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
       <div className="grid gap-8">
-        <h2 className="text-[48px] font-bold text-center font-['Playfair_Display'] mb-[80px]">
+        
+    <h2 className="font-['barlow'] text-[28px] font-medium leading-[40px] secondary-text-gradient mb-[-25px] text-center">
+        Want To See What's Interesting
+      </h2>
+        <h2 className="text-[48px] font-bold text-center font-['Playfair_Display'] mb-[80px] gradient-text-animated">
           Gallery of Wonders
         </h2>
 
@@ -91,13 +95,13 @@ const StackedGallerySlider = () => {
           <div className="flex gap-4 mt-8">
             <button
               onClick={prev}
-              className="bg-gray-200 hover:bg-gray-300 rounded-full p-2 shadow"
+              className="button-color rounded-full p-2 shadow"
             >
               <ChevronLeft size={22} />
             </button>
             <button
               onClick={next}
-              className="bg-gray-200 hover:bg-gray-300 rounded-full p-2 shadow"
+              className="button-color rounded-full p-2 shadow"
             >
               <ChevronRight size={22} />
             </button>

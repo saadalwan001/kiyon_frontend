@@ -16,7 +16,7 @@ const Contact = () => {
             className="relative bg-cover bg-center h-[750px] flex flex-col items-center justify-center text-black"
             style={{ backgroundImage: `url('/Contact.jpg')` }}
           >
-           <h1 className="text-5xl md:text-7xl font-bold text-white drop-shadow-lg font-['Playfair_Display']">
+           <h1 className="text-5xl md:text-7xl font-bold text-white drop-shadow-lg font-['Playfair_Display'] text-center">
            Get in Touch With Us
         </h1>
         <h2 className="mt-4 text-xl md:text-2xl text-white max-w-2xl drop-shadow-md  font-['barlow'] text-center">

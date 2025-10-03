@@ -30,7 +30,7 @@ const TravelHero = () => {
     </section>
 
     {/* Short Content */}
-    <section className="py-20 bg-gray-50 pt-[80px] mb-[80px]">
+    <section className="py-20  pt-[80px] mb-[80px]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         {/* Heading */}
         <h2 className="text-4xl max-w-7xl sm:text-5xl font-bold text-gray-900 mb-4 font-['Playfair_Display']">

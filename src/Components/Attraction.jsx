@@ -42,10 +42,10 @@ const Attraction = () => {
     className="relative bg-cover bg-center h-[750px] flex flex-col items-center justify-center text-black "
     style={{ backgroundImage: `url('/Attraction_bg.jpg')` }}
   >
-    <h2 className="text-2xl md:text-3xl font-['barlow'] font-medium mb-2 text-gray-800 mt-[-150px]">
+    <h2 className="text-2xl md:text-3xl font-['barlow'] font-medium mb-2 text-gray-800 mt-[-150px] secondary-text-gradient">
       Need To Explore
     </h2>
-    <h1 className="text-4xl md:text-5xl font-['Playfair_Display'] font-bold text-center px-4">
+    <h1 className="text-4xl md:text-5xl font-['Playfair_Display'] leading-[60px] font-bold text-center px-4 gradient-text-animated">
       Our Travel Packages
     </h1>
     <span className="inline-block text-center w-[100px] h-1 bg-black mt-5"></span>
@@ -70,7 +70,7 @@ const Attraction = () => {
 
         {/* Content */}
         <div className="p-4 space-y-3">
-          <h3 className="text-xl font-semibold text-gray-800 group-hover:text-green-600">
+          <h3 className="text-xl font-semibold para group-hover:text-[#FF3A4B]">
             {item.title}
           </h3>
 
@@ -78,11 +78,11 @@ const Attraction = () => {
             <Clock size={16} /> <span>{item.days}</span>
           </div>
 
-          <p className="text-gray-600 text-sm">{truncateWords(item.description, 15)}</p>
+          <p className="para text-sm">{truncateWords(item.description, 15)}</p>
 
-          <div className="flex items-center gap-2 text-green-600 font-medium mt-2">
+          <div className="flex items-center gap-2 text-[#FF3A4B] font-medium mt-2">
             <span>See More</span>
-            <span className="flex items-center justify-center w-6 h-6 rounded-full bg-green-100">
+            <span className="flex items-center justify-center w-6 h-6 rounded-full button-color">
               <ArrowRight size={16} />
             </span>
           </div>

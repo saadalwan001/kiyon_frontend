@@ -63,7 +63,7 @@ const DesSection = () => {
     <section className="text-center relative py-12 px-4 md:px-12 mb-[80px]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Grid */}
-<div className="grid grid-cols-2 md:grid-cols-4 gap-6 py-8">
+<div className="grid grid-cols-1 md:grid-cols-4 gap-6 py-8">
   {destinations.slice(0, visibleCount).map((dest) => (
     <a
       key={dest.id}

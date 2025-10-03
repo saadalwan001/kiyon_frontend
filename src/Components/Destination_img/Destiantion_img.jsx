@@ -115,7 +115,7 @@ useEffect(() => {
         onTouchEnd={handleEnd}
       >
         {/* Grid */}
-       <div className="grid grid-cols-2 md:grid-cols-4 gap-6 py-8">
+       <div className="grid grid-cols-1 md:grid-cols-4 gap-6 py-8">
   {currentDestinations.map((dest) => (
     <a
       key={dest.id}
@@ -149,7 +149,7 @@ useEffect(() => {
         </p>
         <div className="flex items-center gap-3 font-['barlow'] font-medium text-[15px]">
           Discover More
-          <span className="w-7 h-7 bg-green-500 rounded-full flex items-center justify-center">
+          <span className="w-7 h-7 button-color rounded-full flex items-center justify-center">
             <ArrowRight size={14} className="text-white" />
           </span>
         </div>
@@ -171,8 +171,8 @@ useEffect(() => {
     disabled={currentIndex === 0}
     className={`w-12 h-12 rounded-full flex items-center justify-center shadow-lg transition
       ${currentIndex === 0 
-        ? "bg-white text-gray-400 cursor-not-allowed" 
-        : "bg-green-500 text-white hover:bg-green-600"}`}
+        ? "bg-white border border-[#FF3A4B] text-gray-400 cursor-not-allowed" 
+        : "button-color text-white"}`}
   >
     <ArrowLeft size={20} />
   </button>
@@ -183,8 +183,8 @@ useEffect(() => {
     disabled={currentIndex === totalPages - 1}
     className={`w-12 h-12 rounded-full flex items-center justify-center shadow-lg transition
       ${currentIndex === totalPages - 1 
-        ? "bg-white text-gray-400 cursor-not-allowed" 
-        : "bg-green-500 text-white hover:bg-green-600"}`}
+        ? "bg-white border border-[#FF3A4B] text-gray-400 cursor-not-allowed" 
+        : "button-color text-white"}`}
   >
     <ArrowRight size={20} />
   </button>
